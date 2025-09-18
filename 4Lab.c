@@ -53,27 +53,49 @@ int main(void)
 
     scanf("%d", &time);
 
-    if (time == 22 || time == 00 || time == 1 || time == 2 || time == 3){
-        printf("Good Night!");
-    }
+    switch (time){
+        case 22:
+        case 23:
+        case 00:
+        case 1:
+        case 2:
+        case 3:
+            printf("Good Night!\n");
+            break;
+        
+        case 4:
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+        case 10:
+            printf("Good Morning!\n");
+            break;
 
-    else if (4 <= time && time <=10){
-        printf("Good Morning!");
-    }
 
-    else if (11 <= time && time <= 14){
-        printf("Good Day!");
-    }
+        
+        case 11:
+        case 12:
+        case 13:
+        case 14:
+            printf("Good Day!\n");
+            break;
+        
+        case 15:
+        case 16:
+            printf("Good Afternoon!\n");
+            break;
+        
+        case 17:
+        case 18:
+        case 19:
+        case 20:
+        case 21:
+            printf("Good Evening!\n");
+            break;
 
-    else if (15 <= time && time <= 16){
-        printf("Good Afternoon!");
-    }
 
-    else if (17 <= time && time <= 21){
-        printf("Good Evening!");
-    }
-
-
-
+    }   
 
 }
