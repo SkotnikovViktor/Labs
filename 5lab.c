@@ -27,10 +27,11 @@ int main(void)
 
     // Задание 1
 
-    printf("Number\tNumber^2");
+    printf("----------------\n");
+    printf("Number\tNumber^2\n");
     int count_1 = 0;
-    for (int i = -1;;i+=2){
-        if (count_1 <= 10){
+    for (int i = 1;;i+=2){
+        if (count_1 < 10 && i >= 0){
             printf("%d\t%d\n",i,i*i);
             count_1++;
         }
@@ -39,6 +40,8 @@ int main(void)
         }
 
     }
+    printf("----------------\n");
+
 
 
 
@@ -62,29 +65,23 @@ int main(void)
 
 
     // Задание 3
-
+    int n_3;
     double sum = 0;
-    int m_3 = 1;
-    int n;
-    double start_number = 1;
 
-    
+    printf("Enter n for 3 task: ");
+    scanf("%d",&n_3);
 
-    printf("Enter N for 3 task: ");
-    scanf("%d", &n);
+    for (int i = 1; i <= n_3; i++){
+        if (i % 2 == 0){
+            sum += 1.0 / i;
+        }
 
-
-    for (int i = 2; i <= n; i++){
-
-        m_3 = m_3 * (-1);
-        start_number = start_number + (1.0 / i) * m_3;
-        sum += start_number;
-
+        else {
+            sum -= 1.0 / i;
+        }
     }
 
-    printf("Result 3 - %lf\n", sum);
-
-
+    printf("Result 3 - %lf\n", sum + 1);
 
 
     // Задание 4
@@ -107,16 +104,20 @@ int main(void)
 
     // Задание 5
     long number_5;
-    double factorial = 1;
+    long long factorial = 1;
+    long long factorial_2 = 1;
 
     printf("Enter number for 5 task:");
     scanf("%ld", &number_5);
+
 
     for (long long i = 1; i <= number_5; i++){
         factorial *= i;
     }
 
-    printf("Result 5 - %d\n", factorial);
+
+    printf("Result(Стирлинг) 5 ~ %lld\n", (sqrt(2*3.14*number_5) * pow((number_5 / 2.718),number_5)));
+    printf("Result(for) 5 - %lld\n", factorial);
 
 
     // Задание 6
