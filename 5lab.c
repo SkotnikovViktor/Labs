@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <time.h>
 
 
 // ДАННЫЙ ФАЙЛ РЕКМОЕНДУЕТСЯ ЗАПУСКАТЬ ЧЕРЕЗ КОМАНДУ: gcc 5lab.c -o aa -lm
@@ -15,8 +16,7 @@
 
 int main(void)
 {
-
-
+    srand(time(NULL));
     int gen_6(void){
         int random = 1 + rand() % 10;
 
@@ -31,10 +31,12 @@ int main(void)
     printf("Number\tNumber^2\n");
     int count_1 = 0;
     for (int i = 1;;i+=2){
+
         if (count_1 < 10 && i >= 0){
             printf("%d\t%d\n",i,i*i);
             count_1++;
         }
+
         else{
             break;
         }
@@ -46,42 +48,44 @@ int main(void)
 
 
     // Задание 2
-    long number;
-    long summa = 0;
+    int ov_number;
+    int count_ov;
+    int sum_ov;
 
-    printf("Enter number for 2 task: ");
-  
-    scanf("%ld", &number);
+    printf("Введите число для 2 задания: ");
+    scanf("%d",&ov_number);
 
-    for (long i = 0; i <= number; i++){
-
-        if (i % 2 == 0){
-            summa = summa + i;
+    for (int i = 0;;i+=2){
+        if (count_ov <= ov_number && i % 2 == 0){
+            sum_ov += i;
+            count_ov++;
+        }
+        
+        else{
+            break;
         }
     }
 
-    printf("Result 2 - %ld\n", summa);
-
+    printf("Результат 2 задания - %d\n", sum_ov);
 
 
     // Задание 3
-    int n_3;
-    double sum = 0;
-
-    printf("Enter n for 3 task: ");
+    double number_d_3 = 1;
+    int m_3 = 1;
+    int n_3 = 0;
+    printf("Введите для 3 задания: ");
     scanf("%d",&n_3);
 
-    for (int i = 1; i <= n_3; i++){
-        if (i % 2 == 0){
-            sum += 1.0 / i;
-        }
 
-        else {
-            sum -= 1.0 / i;
-        }
+
+    for (int i = 2; i <= n_3; i++){
+        
+        m_3 = m_3 * (-1);
+        number_d_3 = number_d_3 + (1.0 / i) * m_3;
     }
 
-    printf("Result 3 - %lf\n", sum + 1);
+    printf("Результат 3 задания - %lf\n",number_d_3);
+
 
 
     // Задание 4
@@ -115,19 +119,19 @@ int main(void)
         factorial *= i;
     }
 
-
-    printf("Result(Стирлинг) 5 ~ %lld\n", (sqrt(2*3.14*number_5) * pow((number_5 / 2.718),number_5)));
-    printf("Result(for) 5 - %lld\n", factorial);
+    printf("Result 5 task - %lld\n", factorial);
 
 
     // Задание 6
     long sr_a = 0;
 
     for (int i = 0; i < 10; i++){
-        sr_a += gen_6();
+        int a = gen_6();
+        sr_a += a;
+        printf("%d\n", a);
     }
 
-    printf("Result medium arip. - %d\n", sr_a);
+    printf("Result medium arip. - %d\n", sr_a / 10);
 
 
     // Задание 7
