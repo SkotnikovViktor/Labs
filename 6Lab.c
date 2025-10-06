@@ -33,7 +33,7 @@ int main(void){
     long number = 0;
     long min = 99999;
 
-    while (true){
+    while (1){
 
         scanf("%d",&number);
 
@@ -73,8 +73,30 @@ int main(void){
     }
 
 
-    // Задание 4(Пока хз, будет дополнено)
-    
+    // Задание 4
+    long tocn; // Переменная для точности
+    double start_pos_end_sum = 1;
+    int n = 2;
+    int m = -1; // Переменная, которая будет менятся при каждой итер.
+
+    printf("Введите точность: ");
+    scanf("%d", &tocn);
+
+    while (n <= tocn){
+        n++;
+        
+        if (n % 2 != 0){
+            start_pos_end_sum = start_pos_end_sum + (1.0 / n) * m;
+            m = m * (-1);
+            
+        }
+        
+
+    }
+
+    printf("Результат 4 задания - %.15lf\n", (start_pos_end_sum * 4));
+
+
 
 
 }
