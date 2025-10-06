@@ -42,8 +42,13 @@ int main(void){
             break;
         }
 
-        else if (number == 0){
+        else if (number == 0 && min != 99999){
             printf("Завершение работы программы!\nСамое минимальное вводимое число: %d\n",min);
+            break;
+        }
+
+        else if (number == 0 && min == 99999){
+            printf("Завершение работы программы!\nСамое минимальное вводимое число: %d\n",0);
             break;
         }
 
