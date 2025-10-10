@@ -1,3 +1,4 @@
+#define _USE_MATH_DEFINES
 #include <stdio.h>
 #include <math.h>
 
@@ -24,7 +25,7 @@ int main(void){
 
     // Задание 1
     // а) Да, так как e2 одно и тоже условие.
-    // б) Нет, так как в for мы обязаны передать условие вторым аргументом, а в while можно просто передать (0 - false, 1 - true)
+    // б) Да, так как в for мы обязаны передать условие вторым аргументом, а в while можно просто передать (0 - false, 1 - true)
     // Если в while передать 1, то получиться бесконечный цикл
 
 
@@ -79,27 +80,39 @@ int main(void){
 
 
     // Задание 4
-    long tocn; // Переменная для точности
+    double tocn; // Переменная для точности
     double start_pos_end_sum = 1;
     int n = 2;
     int m = -1; // Переменная, которая будет менятся при каждой итер.
+    const double pi = 3.14159265358979323846;
+    
 
     printf("Введите точность: ");
-    scanf("%d", &tocn);
-
-    while (n <= tocn){
+    scanf("%lf", &tocn);
+    
+    while (1){
         n++;
         
         if (n % 2 != 0){
+
             start_pos_end_sum = start_pos_end_sum + (1.0 / n) * m;
             m = m * (-1);
             
-        }
-        
+            printf("%lf\n",pi - start_pos_end_sum * 4);
 
+            if (fabs(pi - start_pos_end_sum * 4) < tocn){
+                printf("Результат 4 задания - %.20lf\n", start_pos_end_sum * 4);
+                break;
+            }
+            
+
+            else{
+                continue;
+            }   
+        }
     }
 
-    printf("Результат 4 задания - %.15lf\n", (start_pos_end_sum * 4));
+    //printf("Результат 4 задания - %.15lf\n", (start_pos_end_sum * 4));
 
 
 
