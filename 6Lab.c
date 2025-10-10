@@ -25,7 +25,7 @@ int main(void){
 
     // Задание 1
     // а) Да, так как e2 одно и тоже условие.
-    // б) Да, так как в for мы обязаны передать условие вторым аргументом, а в while можно просто передать (0 - false, 1 - true)
+    // б) Да
     // Если в while передать 1, то получиться бесконечный цикл
 
 
@@ -98,10 +98,10 @@ int main(void){
             start_pos_end_sum = start_pos_end_sum + (1.0 / n) * m;
             m = m * (-1);
             
-            printf("%lf\n",pi - start_pos_end_sum * 4);
+            //printf("%lf\n",pi - start_pos_end_sum * 4);
 
             if (fabs(pi - start_pos_end_sum * 4) < tocn){
-                printf("Результат 4 задания - %.20lf\n", start_pos_end_sum * 4);
+                printf("Результат 4 задания - %.10lf\npi - %.10lf\n", start_pos_end_sum * 4, pi);
                 break;
             }
             
@@ -112,7 +112,7 @@ int main(void){
         }
     }
 
-    //printf("Результат 4 задания - %.15lf\n", (start_pos_end_sum * 4));
+  
 
 
 
