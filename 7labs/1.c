@@ -18,9 +18,11 @@ int main(void){
     printf("Элементы массива - ");
     for (int i = 0; i < 10; i++){
         
-        printf("%d \n", mass[i]);
+        printf("%d ", mass[i]);
     }
 
-    printf("Минимальный элемент массива - %d", h);
+    printf("\n");
+
+    printf("Минимальный элемент массива - %d\n", h);
 
 }

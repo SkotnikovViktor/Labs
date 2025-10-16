@@ -4,7 +4,7 @@
 
 
 
-int gen_6(void){
+int GeneratorNumbers(void){
     int random = 0 + rand() % 100;
 
     return random;
@@ -15,11 +15,11 @@ int main(void){
 
     srand(time(NULL));
 
-    int lens = gen_6();
+    int lens = GeneratorNumbers();
     int massive_random_number[lens];
 
     for (int i = 0; i < lens; i++){
-        massive_random_number[i]= gen_6();
+        massive_random_number[i]= GeneratorNumbers();
     }
 
     printf("Массив псевдослучайных чисел - ");
