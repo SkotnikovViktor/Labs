@@ -14,6 +14,7 @@ int main(void){
     int matrix[5][5];
 
     int sum_main_diagonal = 0;
+    int sum_vt_diagonal = 0;
 
     for (int i = 0; i < 5; i++){
         for (int j = 0; j < 5; j++){
@@ -22,20 +23,33 @@ int main(void){
             if (i  == j){
                 sum_main_diagonal += t;
             }
-        }
-    }
 
-    for (int i = 0; i < 5; i++){
-        for (int j = 0; j < 5; j++){
-            if (i == j){
-                printf(" %d ",matrix[i][j]);
+            if ((i +j) == 4){
+                sum_vt_diagonal += t;
             }
         }
     }
+
+
+    printf("Сумма главной диагонали - %d\n",sum_main_diagonal);
+    printf("Сумма другой диагонали - %d\n",sum_vt_diagonal);
+
+
+
+    // Вывод матрицы для проверки
+    for (int i = 0; i < 5; i++){
+        for (int j = 0; j < 5; j++){
+            printf(" %d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+
     
 
-    printf("\n%d\nСумма главной диагонали - ",sum_main_diagonal);
 
+
+
+    
 
 
 }
