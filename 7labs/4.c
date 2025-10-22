@@ -2,8 +2,6 @@
 #include <time.h>
 #include <stdlib.h>
 
-/// исправить
-
 int gen(void){
     int random = 0 + rand() % 10;
 

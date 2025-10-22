@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-// Переделать
+
 int main(void){
 
     int mas1[6] = {1,2,3,4,9,20};
