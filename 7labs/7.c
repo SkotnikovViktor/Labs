@@ -1,25 +1,49 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+// Переделать
 int main(void){
-    int mas1[4] = {8,7,6,5};
-    int mas2[4] = {4,3,2,1};
-    int mas_merge[8];
 
+    int mas1[6] = {1,2,3,4,9,20};
+    int mas2[4] = {5,6,7,8};
 
-    int m = 0;
+    int len_mas1 = sizeof(mas1) / sizeof(mas1[0]);
+    int len_mas2 = sizeof(mas2) / sizeof(mas2[0]);
 
-    for (int i = 0; i < 4; i++){
+    int mas_merge[len_mas1 + len_mas2];
+    int index = 0;
+    int pos;
+
+    for (int i = 0; i < len_mas1; i++){
         mas_merge[i] = mas1[i];
-    }
-    
-    for (int j = 4; j < 8; j++){
-        mas_merge[j] = mas2[m];
-        m++;
-
+        index = i;
     }
 
-    for (int i  = 0; i < 8; i++){
+    for (int j = 0; j < len_mas2; j++){
+        index++;
+        mas_merge[index] = mas2[j];
+    }
+
+
+
+    for (int i = 0; i < (len_mas1 + len_mas2 - 1); i++){
+        pos = i;
+        for (int j = i+1; j < (len_mas1 + len_mas2); j++){
+
+            if (mas_merge[pos] < mas_merge[j]){
+                pos = j;
+            }
+        }
+            if (pos != i){
+                int t = mas_merge[i];
+                mas_merge[i] = mas_merge[pos];
+                mas_merge[pos] = t;
+        }
+    }
+
+
+
+    for (int i = 0; i < (len_mas1 + len_mas2); i++){
         printf(" %d ", mas_merge[i]);
     }
+
 }

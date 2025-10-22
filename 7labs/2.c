@@ -14,6 +14,7 @@ int GeneratorNumbers(void){
 int main(void){
 
     srand(time(NULL));
+    printf("%d", time(NULL));
 
     int lens = GeneratorNumbers();
     int massive_random_number[lens];

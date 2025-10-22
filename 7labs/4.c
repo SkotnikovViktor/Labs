@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-
+/// исправить
 
 int gen(void){
     int random = 0 + rand() % 10;
@@ -24,11 +24,14 @@ int main(void){
         massive[i] = gen();
     }
 
+
     printf("Base - ");
     for (int i = 0; i < len_massive; i++){
         printf(" %d ", massive[i]);
     }
     printf("\n");
+
+
 
     // Сортировка выбором
     for (int i = 0; i < len_massive - 1; i++){
@@ -47,31 +50,21 @@ int main(void){
     }
 
 
-    
-
-    if (len_massive != 0)
-        for (int i = 1; i < len_massive - 1; i++){
+    for (int i = 0; i < len_massive; i++){
+        if (massive[i] != massive[0] && massive[i] != massive[len_massive - 1]){
             sum += massive[i];
             count++;
-            printf(" %d ", massive[i]);
         }
-
-    else{
-        printf("Длина массива равна 0!\n");
-        exit(0);
     }
 
 
     if (sum != 0){
-        printf("\n%lf\n", sum / (count * 1.0)); 
-    }
-
-    else{
-        printf("Сумма равна 0");
-        exit(0);
+        printf("%lf\n", sum / (count * 1.0));
     }
     
-
+    else{
+        printf("Ср. арифм = 0\n");
+    }
 
 
 

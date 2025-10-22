@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
+// Совместить в один
 int gen(void){
-    int random = 0 + rand() % 1000;
+    int random = 0 + rand() % 10000;
 
     return random;
 }
@@ -44,6 +44,9 @@ int main(void){
         }
         bottom_sum[j] = sum;
     }
+
+
+
 
 
     for (int i  = 0; i < 6; i++){

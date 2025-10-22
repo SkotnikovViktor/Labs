@@ -4,8 +4,8 @@
 
 
 int main(void){
-    int mas1[4] = {1,2,37,3};
-    int mas2[4] = {4,2,6,37};
+    int mas1[4] = {1,2,2,3};
+    int mas2[4] = {4,2,2,37};
     int count = 0;
 
     printf("Повт. числа - ");

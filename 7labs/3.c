@@ -40,9 +40,9 @@ int main(void){
     }
 
 
-    for (int i = 0; i < len_massive; i++){
-        printf("%d ", massive[i]);
-    }
+
+    printf("%d \t %d\n", massive[0], massive[sizeof(massive) / sizeof(int) - 1]);
+    
 
 
 
