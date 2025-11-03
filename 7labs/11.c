@@ -24,7 +24,7 @@ int sr(int a, int b){
     }
 }
 
-
+// переделать
 
 int main(void){
     srand(time(NULL));
@@ -33,15 +33,12 @@ int main(void){
     for (int i = 0; i < 3; i++){
         for (int j = 0; j < 3; j++){
             matrix[i][j] = gen();
-        }
-    }
-
-    for (int i = 0; i < 3; i++){
-        for (int j = 0; j < 3; j++){
             printf( "%d ",matrix[i][j]);
         }
         printf("\n");
     }
+
+
 
     int sum_line[3];
     int sum = 0;

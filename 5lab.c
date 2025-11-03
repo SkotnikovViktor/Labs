@@ -97,19 +97,19 @@ int main(void)
 
 
     // Задание 5
-    long number_5;
-    long long factorial = 1;
-    long long factorial_2 = 1;
+    double number_5;
+    double factorial = 1;
+    double factorial_2 = 1;
 
     printf("Enter number for 5 task:");
-    scanf("%ld", &number_5);
+    scanf("%lf", &number_5);
 
 
-    for (long long i = 1; i <= number_5; i++){
+    for (int i = 1; i <= number_5; i++){
         factorial *= i;
     }
 
-    printf("Result 5 task - %lld\n", factorial);
+    printf("Result 5 task - %lf\n%d", factorial, pow(number_5,number_5));
 
 
     // Задание 6
