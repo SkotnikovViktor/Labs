@@ -25,42 +25,48 @@ int main(void){
 
             int test = gen();
             matrix[i][j] = test;
-            printf(" %d ",test);
+            printf(" %d ", test);
 
         }
+
+        printf("\n");
     }
 
-    printf("\n");
 
 
+
+
+    // номер элемента = номер строки эл * кол-во 
     // Реализация генерации по строчкам
     int count_rows = 0;
     for (int i = 0; i < size; i++){
         for (int j = 0; j < size; j++){
 
-            rows_massive[count_rows] = matrix[i][j];
+            rows_massive[i * size + j] = matrix[i][j];
 
             count_rows++;
         }
-
         
     }
 
 
+    
     // Реализация генерации по столбцам
     int count_column = 0;
-    for (int i = 0; i < size; i++){
-        for (int j = 0; j < size; j++){
+    for (int j = 0; j < size; j++){
+        for (int i = 0; i < size; i++){
 
-            column_massive[count_column] = matrix[j][i];
+            column_massive[j * size + i] = matrix[i][j];
 
             count_column++;
 
         }
-    }
+    }   
 
+    
 
-
+    
+    printf("First: ");
     // Вывод для проверки
     for (int i = 0; i < size * size; i++){
         printf(" %d ", column_massive[i]);
@@ -68,12 +74,14 @@ int main(void){
     }
 
 
+    printf("\n");
 
 
+    printf("Second: ");
+    for (int i = 0; i < size * size; i++){
+        printf(" %d ", rows_massive[i]);
 
-
-
-
+    }
 
 
 }
