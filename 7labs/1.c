@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+
+
 int main(void){
     int mass[10];
     int h = 999999;
