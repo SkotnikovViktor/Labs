@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-
+#include <windows.h>
 
 
 double fact(long long number){
@@ -25,6 +25,9 @@ double fact(long long number){
 
 
 int main(void){
+
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
     
     double toch;
     double x = 0.6;

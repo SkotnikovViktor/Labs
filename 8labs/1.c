@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <windows.h>
 
 
 
@@ -25,6 +26,9 @@ double fact(long long number){
 
 
 int main(void){
+
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
     
     double toch;
     double x = 0.6;
@@ -38,7 +42,7 @@ int main(void){
 
     for (int i = 2;; i+=2){
         m = m * (-1);
-        start_number = start_number + (pow(x,i) / fact(i)) * m;
+        start_number = start_number + ((pow(x,i) / fact(i)) * m);
 
         if (fabs(cos_x - start_number) < toch){
 
@@ -50,12 +54,6 @@ int main(void){
 
     }
 
-
-    
-
-
-    
-    
 
 
 
