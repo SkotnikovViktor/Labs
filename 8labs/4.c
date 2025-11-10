@@ -16,11 +16,11 @@ double fact(long long number) {
 
 }
 
-int main(void) {
+int main(void){
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
 
-    double x; 
+    double x;
     printf("Введите x: ");
     scanf("%lf", &x);
 
@@ -28,24 +28,20 @@ int main(void) {
     printf("Введите точность: ");
     scanf("%lf", &toch);
 
-    double result = 1.0;
-    double prev_result = 0.0;
+    double result = x;
+    double iter;
+    
+    for (int n = 1 ; ; n++){
+        double numerator = fact(2 * n) * pow(x, 2*n + 1);
+        double denominator = pow(4, n) * pow(fact(n), 2) * (2*n + 1);
+        iter = numerator / denominator;
 
-    for (int n = 1; ; n++) { 
-        double term = (pow(-1, n) * fact(2 * n)) / 
-                     ((1 - 2 * n) * pow(fact(n), 2) * pow(4, n)) * pow(x, n);
-        
-        result += term;
+        result += iter;
 
-
-        if (fabs(sqrt(1 + x) - result) < toch) {
-            printf("Мой результат: %lf \nЗначение math: %lf\n", result, sqrt(1 + x));
+        if (fabs(asin(x) - result) < toch){
+            printf("Мой результат - %d\nЗначение из math - %d",result, asin(x));
             break;
         }
-        
-
-        
     }
 
-    return 0;
 }
