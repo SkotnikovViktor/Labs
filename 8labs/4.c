@@ -28,20 +28,24 @@ int main(void){
     printf("Введите точность: ");
     scanf("%lf", &toch);
 
-    double result = x;
-    double iter;
+    double result = 0; // Спросить насчёт x! 
+    double iter = 0;
+
     
-    for (int n = 1 ; ; n++){
-        double numerator = fact(2 * n) * pow(x, 2*n + 1);
+    for (int n = 0 ; ; n++){
+        double numerator = fact(2 * n);
         double denominator = pow(4, n) * pow(fact(n), 2) * (2*n + 1);
-        iter = numerator / denominator;
+        iter = (numerator / denominator)  * pow(x, 2*n + 1); 
+   
 
         result += iter;
 
-        if (fabs(asin(x) - result) < toch){
-            printf("Мой результат - %d\nЗначение из math - %d",result, asin(x));
+        if (fabs(iter) < toch){
+            printf("Результат программы - %lf\nЗначение из math - %lf",result, asin(x));
             break;
         }
+
+       
     }
 
 }
