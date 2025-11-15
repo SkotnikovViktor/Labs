@@ -31,13 +31,15 @@ int main(void){
     SetConsoleCP(CP_UTF8);
     
     double toch;
-    double x = 0.6;
+    double x;
     double start_number = 1.0;
-    double cos_x = cos(x);
+    
     int m = 1;
 
 
     scanf("%lf", &toch); 
+    scanf("%lf", &x);
+    double cos_x = cos(x);
 
 
     for (int i = 2;; i+=2){

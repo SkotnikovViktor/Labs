@@ -33,9 +33,15 @@ int main(void){
         }
     }
 
+
+    printf("Числа главной диагонали -  \n");
+    int sum = 0;
     for (int i = 0; i < matrix_size; i++){
-        printf("Числа главной диагонали -  %d ",massive_main_diagonile[i]);
+        printf(" %d ",massive_main_diagonile[i]);
+        sum += massive_main_diagonile[i];
     }
+
+    printf("Сумма числе главной диагонали - %d",sum);
     
 
 

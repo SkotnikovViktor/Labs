@@ -30,20 +30,26 @@ int main(void){
     SetConsoleCP(CP_UTF8);
     
     double toch;
-    double x = 0.6;
-    double start_number;
-    double sin_x = sin(x);
+    double x;
+   
     int m = 1;
+   
 
 
     scanf("%lf", &toch); 
+    scanf("%lf", &x);
+    double sin_x = sin(x);
+    double iter  = 0;
+    double start_number = x;
 
 
     for (int i = 3;; i+=2){
         m = m * (-1);
-        start_number = x + (pow(x,i) / fact(i)) * m;
+        iter = (pow(x,i) / fact(i)) * m;
 
-        if (fabs(sin_x - start_number) < toch){
+        start_number += iter;
+
+        if (fabs(iter) < toch){
 
             printf("Результат - %lf\nЗначение из math - %lf\n",start_number,sin_x);
             break;

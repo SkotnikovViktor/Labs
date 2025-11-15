@@ -21,11 +21,11 @@ int main(void){
 
     int matrix_size = pow(sizeof(matrix_massive) / (sizeof(matrix_massive[0][0])),0.5);
 
-    int massive_main_diagonile[matrix_size];
+    int massive_main_diagonile[matrix_size * 2];
     int massive_diff_diagonile[matrix_size];
     
     int index_main_di = 0;
-    int index_diff_di = 0;
+    int index_diff_di = matrix_size;
 
     for (int i = 0; i < matrix_size; i++){
         for (int j = 0; j < matrix_size; j++){
@@ -35,13 +35,13 @@ int main(void){
             }
 
             if ((i + j) == (matrix_size - 1)){
-                massive_diff_diagonile[index_diff_di] = matrix_massive[i][j];
+                massive_main_diagonile[index_diff_di] = matrix_massive[i][j];
                 index_diff_di++;
             }
         }
     }
 
-    for (int i = 0; i < matrix_size; i++){
+    for (int i = 0; i < matrix_size * 2; i++){
         printf("%d ",massive_main_diagonile[i]);
     }
 

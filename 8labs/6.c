@@ -24,10 +24,24 @@ int main(void){
         }
     }
 
+    int slice[massive_size / 2 + 1];
+    int cnt = 0;
+
+    for (int i = 0; i < massive_size; i+=3){
+        slice[cnt] = i;
+        cnt++;
+    }
+
     printf("Исходный массив\n");
     for (int i = 0; i < massive_size; i++){
         printf(" %d ",massive[i]);
     }
+
+
+    for (int i  = 0; i < (massive_size / 2 + 1); i++){
+        printf("Test -  %d ", massive[slice[i]]);
+    }
+
 
     printf("\n");
 

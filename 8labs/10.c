@@ -13,65 +13,43 @@ int main(void){
 
     int main_massive[rand() % 10 + 1];
     int size_main_massive = sizeof(main_massive) / sizeof(main_massive[0]);
+    int count_oven_index = 0;
 
-    int count_oven_number = 0;
     for (int i = 0; i < size_main_massive; i++){
+        if (i % 2 == 0){
+            count_oven_index++;
+        }
         main_massive[i] = rand() % 100 + 1;
-        if (main_massive[i] % 2 == 0){
-            count_oven_number++;
-        }
     }
 
 
-    int massive_with_oven_number[count_oven_number];
+    int slise[count_oven_index];
     int index = 0;
-    for (int i = 0; i < size_main_massive; i++){
-        if (main_massive[i] % 2 == 0){
-            massive_with_oven_number[index] = main_massive[i];
-            index++;
-        }
+    for (int i = 0; i < size_main_massive; i+=2){
+        slise[index] = i;
+        index++;
     }
 
 
-    printf("Введите - 1, если хотите проверить массивы на верность среза, иначе - 0\n");
-    int st = 0;
-    scanf("%d", &st);
+    for (int i = 0; i < count_oven_index / 2; i++){
+        int t = slise[i];
+        slise[i] = slise[count_oven_index - i - 1];
+        slise[count_oven_index - i - 1] = t;
 
-    if (st == 1){
-        for (int i = 0; i < size_main_massive; i++){
-            printf(" %d ", main_massive[i]);
-        }
-
-
-        printf("\n");
-
-    
-        for (int i = 0; i < count_oven_number; i++){
-            printf(" %d ", massive_with_oven_number[i]);
-        }
     }
 
-    else if (st == 0){
 
-        for (int i = 0; i < count_oven_number; i++){
-            printf(" %d ", massive_with_oven_number[i]);
-        }
-
-        int massive_with_oven_number_reverse[count_oven_number];
-        for (int i = 0; i < count_oven_number; i++){
-            massive_with_oven_number_reverse[i] = massive_with_oven_number[count_oven_number - i - 1]; 
-        }
-
-
-        printf("\n");
-
-
-        for (int i = 0; i < count_oven_number; i++){
-            printf(" %d ", massive_with_oven_number_reverse[i]);
-        }
-
-        
+    printf("Базовый массив - \n");
+    for(int i = 0; i < size_main_massive; i++){
+        printf(" %d ",main_massive[i]);
     }
 
+    printf("\n");
+
+
+    printf("Перевёрнутый массив - \n");
+    for(int i = 0; i < count_oven_index; i++){
+        printf(" %d ", main_massive[slise[i]]);
+    }
 
 }
